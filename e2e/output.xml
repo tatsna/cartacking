@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20190222 16:34:21.850">
+<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20190222 16:58:55.463">
 <suite id="s1" name="Checkin" source="/Users/spartar/Documents/ProjectApplication/test1/cartacking/e2e/checkin.robot">
 <test id="s1-t1" name="test clickcheckin">
 <kw name="Open Browser" library="Selenium2Library">
@@ -8,45 +8,45 @@
 <arg>http://localhost:3000/</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20190222 16:34:22.059" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 16:34:22.059" endtime="20190222 16:34:25.749"></status>
+<msg timestamp="20190222 16:58:55.623" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20190222 16:58:55.623" endtime="20190222 16:58:59.440"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>http://localhost:3000/</arg>
 </arguments>
-<msg timestamp="20190222 16:34:25.762" level="INFO">Current location is 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 16:34:25.750" endtime="20190222 16:34:25.762"></status>
+<msg timestamp="20190222 16:58:59.461" level="INFO">Current location is 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20190222 16:58:59.441" endtime="20190222 16:58:59.462"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>checkin</arg>
 </arguments>
-<msg timestamp="20190222 16:34:25.762" level="INFO">Clicking element 'checkin'.</msg>
-<status status="PASS" starttime="20190222 16:34:25.762" endtime="20190222 16:34:25.962"></status>
+<msg timestamp="20190222 16:58:59.463" level="INFO">Clicking element 'checkin'.</msg>
+<status status="PASS" starttime="20190222 16:58:59.462" endtime="20190222 16:58:59.687"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>fromSubmit</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:25.962" endtime="20190222 16:34:26.008"></status>
+<status status="PASS" starttime="20190222 16:58:59.688" endtime="20190222 16:58:59.723"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>InputRe</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:26.008" endtime="20190222 16:34:26.030"></status>
+<status status="PASS" starttime="20190222 16:58:59.723" endtime="20190222 16:58:59.748"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>InputRfid</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:26.030" endtime="20190222 16:34:26.059"></status>
+<status status="PASS" starttime="20190222 16:58:59.748" endtime="20190222 16:58:59.773"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -54,8 +54,8 @@
 <arg>InputRe</arg>
 <arg>7777</arg>
 </arguments>
-<msg timestamp="20190222 16:34:26.059" level="INFO">Typing text '7777' into text field 'InputRe'.</msg>
-<status status="PASS" starttime="20190222 16:34:26.059" endtime="20190222 16:34:26.349"></status>
+<msg timestamp="20190222 16:58:59.773" level="INFO">Typing text '7777' into text field 'InputRe'.</msg>
+<status status="PASS" starttime="20190222 16:58:59.773" endtime="20190222 16:59:00.073"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -63,66 +63,66 @@
 <arg>InputRfid</arg>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190222 16:34:26.349" level="INFO">Typing text '1' into text field 'InputRfid'.</msg>
-<status status="PASS" starttime="20190222 16:34:26.349" endtime="20190222 16:34:26.430"></status>
+<msg timestamp="20190222 16:59:00.074" level="INFO">Typing text '1' into text field 'InputRfid'.</msg>
+<status status="PASS" starttime="20190222 16:59:00.074" endtime="20190222 16:59:00.186"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>btnSubmit</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:26.430" endtime="20190222 16:34:26.448"></status>
+<status status="PASS" starttime="20190222 16:59:00.187" endtime="20190222 16:59:00.213"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>btnCancel</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:26.448" endtime="20190222 16:34:26.466"></status>
+<status status="PASS" starttime="20190222 16:59:00.214" endtime="20190222 16:59:00.240"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>btnSubmit</arg>
 </arguments>
-<msg timestamp="20190222 16:34:26.467" level="INFO">Clicking element 'btnSubmit'.</msg>
-<status status="PASS" starttime="20190222 16:34:26.466" endtime="20190222 16:34:26.568"></status>
+<msg timestamp="20190222 16:59:00.241" level="INFO">Clicking element 'btnSubmit'.</msg>
+<status status="PASS" starttime="20190222 16:59:00.240" endtime="20190222 16:59:00.357"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>fromSuccess</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:26.568" endtime="20190222 16:34:26.604"></status>
+<status status="PASS" starttime="20190222 16:59:00.357" endtime="20190222 16:59:00.418"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>btnOK</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:26.604" endtime="20190222 16:34:26.660"></status>
+<status status="PASS" starttime="20190222 16:59:00.422" endtime="20190222 16:59:00.474"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>btnOK</arg>
 </arguments>
-<msg timestamp="20190222 16:34:26.661" level="INFO">Clicking element 'btnOK'.</msg>
-<status status="PASS" starttime="20190222 16:34:26.660" endtime="20190222 16:34:26.738"></status>
+<msg timestamp="20190222 16:59:00.474" level="INFO">Clicking element 'btnOK'.</msg>
+<status status="PASS" starttime="20190222 16:59:00.474" endtime="20190222 16:59:00.565"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>3s</arg>
+<arg>1s</arg>
 </arguments>
-<msg timestamp="20190222 16:34:29.739" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20190222 16:34:26.738" endtime="20190222 16:34:29.740"></status>
+<msg timestamp="20190222 16:59:01.568" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190222 16:59:00.566" endtime="20190222 16:59:01.568"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190222 16:34:29.741" endtime="20190222 16:34:29.878"></status>
+<status status="PASS" starttime="20190222 16:59:01.569" endtime="20190222 16:59:01.700"></status>
 </kw>
-<status status="PASS" starttime="20190222 16:34:22.058" endtime="20190222 16:34:29.886" critical="yes"></status>
+<status status="PASS" starttime="20190222 16:58:55.621" endtime="20190222 16:59:01.701" critical="yes"></status>
 </test>
 <test id="s1-t2" name="test clickcheckin">
 <kw name="Open Browser" library="Selenium2Library">
@@ -131,52 +131,158 @@
 <arg>http://localhost:3000/?car_size=50</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20190222 16:34:29.901" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/?car_size=50'.</msg>
-<status status="PASS" starttime="20190222 16:34:29.901" endtime="20190222 16:34:33.704"></status>
+<msg timestamp="20190222 16:59:01.706" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/?car_size=50'.</msg>
+<status status="PASS" starttime="20190222 16:59:01.704" endtime="20190222 16:59:04.689"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>http://localhost:3000/?car_size=50</arg>
 </arguments>
-<msg timestamp="20190222 16:34:33.713" level="INFO">Current location is 'http://localhost:3000/?car_size=50'.</msg>
-<status status="PASS" starttime="20190222 16:34:33.705" endtime="20190222 16:34:33.713"></status>
+<msg timestamp="20190222 16:59:04.710" level="INFO">Current location is 'http://localhost:3000/?car_size=50'.</msg>
+<status status="PASS" starttime="20190222 16:59:04.691" endtime="20190222 16:59:04.710"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element ``locator`` appears on current page.</doc>
 <arguments>
 <arg>Disable</arg>
 </arguments>
-<status status="PASS" starttime="20190222 16:34:33.713" endtime="20190222 16:34:33.727"></status>
+<status status="PASS" starttime="20190222 16:59:04.711" endtime="20190222 16:59:04.736"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>3s</arg>
+<arg>1s</arg>
 </arguments>
-<msg timestamp="20190222 16:34:36.729" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20190222 16:34:33.727" endtime="20190222 16:34:36.729"></status>
+<msg timestamp="20190222 16:59:05.737" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190222 16:59:04.736" endtime="20190222 16:59:05.737"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190222 16:34:36.730" endtime="20190222 16:34:36.808"></status>
+<status status="PASS" starttime="20190222 16:59:05.738" endtime="20190222 16:59:05.892"></status>
 </kw>
-<status status="PASS" starttime="20190222 16:34:29.899" endtime="20190222 16:34:36.808" critical="yes"></status>
+<status status="PASS" starttime="20190222 16:59:01.703" endtime="20190222 16:59:05.893" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190222 16:34:21.851" endtime="20190222 16:34:36.810"></status>
+<test id="s1-t3" name="test CheckinRfidduplicate">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://localhost:3000/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20190222 16:59:05.895" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20190222 16:59:05.895" endtime="20190222 16:59:09.591"></status>
+</kw>
+<kw name="Location Should Be" library="Selenium2Library">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>http://localhost:3000/</arg>
+</arguments>
+<msg timestamp="20190222 16:59:09.604" level="INFO">Current location is 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20190222 16:59:09.593" endtime="20190222 16:59:09.604"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>checkin</arg>
+</arguments>
+<msg timestamp="20190222 16:59:09.606" level="INFO">Clicking element 'checkin'.</msg>
+<status status="PASS" starttime="20190222 16:59:09.605" endtime="20190222 16:59:09.824"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>fromSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20190222 16:59:09.825" endtime="20190222 16:59:09.847"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>InputRe</arg>
+</arguments>
+<status status="PASS" starttime="20190222 16:59:09.848" endtime="20190222 16:59:09.866"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>InputRfid</arg>
+</arguments>
+<status status="PASS" starttime="20190222 16:59:09.867" endtime="20190222 16:59:09.885"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>InputRe</arg>
+<arg>8888</arg>
+</arguments>
+<msg timestamp="20190222 16:59:09.886" level="INFO">Typing text '8888' into text field 'InputRe'.</msg>
+<status status="PASS" starttime="20190222 16:59:09.886" endtime="20190222 16:59:10.148"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>InputRfid</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20190222 16:59:10.149" level="INFO">Typing text '1' into text field 'InputRfid'.</msg>
+<status status="PASS" starttime="20190222 16:59:10.149" endtime="20190222 16:59:10.241"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<status status="PASS" starttime="20190222 16:59:10.242" endtime="20190222 16:59:10.264"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>btnCancel</arg>
+</arguments>
+<status status="PASS" starttime="20190222 16:59:10.265" endtime="20190222 16:59:10.284"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>btnSubmit</arg>
+</arguments>
+<msg timestamp="20190222 16:59:10.285" level="INFO">Clicking element 'btnSubmit'.</msg>
+<status status="PASS" starttime="20190222 16:59:10.284" endtime="20190222 16:59:10.416"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>fromError</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190222 16:59:16.162" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190222 16:59:15.552" endtime="20190222 16:59:16.162"></status>
+</kw>
+<msg timestamp="20190222 16:59:16.164" level="FAIL">Element 'fromError' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20190222 16:59:10.416" endtime="20190222 16:59:16.164"></status>
+</kw>
+<kw name="Close Browser" library="Selenium2Library" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20190222 16:59:16.165" endtime="20190222 16:59:16.318"></status>
+</kw>
+<status status="FAIL" starttime="20190222 16:59:05.893" endtime="20190222 16:59:16.318" critical="yes">Element 'fromError' did not appear in 5 seconds.</status>
+</test>
+<status status="FAIL" starttime="20190222 16:58:55.466" endtime="20190222 16:59:16.321"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0">Critical Tests</stat>
-<stat pass="2" fail="0">All Tests</stat>
+<stat pass="2" fail="1">Critical Tests</stat>
+<stat pass="2" fail="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" id="s1" name="Checkin">Checkin</stat>
+<stat pass="2" fail="1" id="s1" name="Checkin">Checkin</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20190222 16:34:29.899" level="WARN">Multiple test cases with name 'test clickcheckin' executed in test suite 'Checkin'.</msg>
+<msg timestamp="20190222 16:59:01.703" level="WARN">Multiple test cases with name 'test clickcheckin' executed in test suite 'Checkin'.</msg>
 </errors>
 </robot>
