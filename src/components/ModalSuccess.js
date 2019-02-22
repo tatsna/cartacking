@@ -59,8 +59,7 @@ class ModalSuccess extends Component {
         const { status, onSuccess } = this.props
         return (
             <div>
-                <Modal basic
-        size='small' id="fromSuccess" open={status}  >
+                <Modal basic size='small' id="fromSuccess" open={status}  >
                     <Header icon='browser' content='ทำรายการสำเร็จ' />
                     <Modal.Content>
                         <h3>คุณได้เพิ่มจำนวนและอนุมัติให้ รถเข้าจอดแล้ว.</h3>

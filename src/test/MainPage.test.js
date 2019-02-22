@@ -41,18 +41,21 @@ describe("event", () => {
         const wrapper = shallow(<MainPage />);
         wrapper.instance().handlerSubmitForm()
         expect(wrapper.state('fromModal')).toBe(true)
-
         wrapper.instance().Success()
         expect(wrapper.state('fromModal')).toBe(false)
         expect(wrapper.state('fromSuccess')).toBe(false)
     });
 
-    it("Check functions component number", () => {
+    it("Check Rfid duplicate", () => {
         const wrapper = shallow(<MainPage />);
+        if(wrapper.state('RfidDefault')  == wrapper.state('Rfid')){
+            expect(wrapper.state('fromSuccess')).toBe(false)
+            expect(wrapper.state('fromError')).toBe(true)
+        } else {
+            expect(wrapper.state('fromSuccess')).toBe(true)
+            expect(wrapper.state('fromError')).toBe(false)
+        }
     });
-
-
-
 
     afterEach(() => {
         // handlerSubmitForm.mockReset();
