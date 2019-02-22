@@ -6,7 +6,11 @@ import { shallow, mount, render } from 'enzyme';
 describe("render", () => {
     it('renders without crashing', () => {
         const wrapper = shallow(<MainPage />)
-        expect(wrapper.find('#checkin')).toHaveLength(1)
+        if(wrapper.state('number') >= 50){
+            expect(wrapper.find('#Disable')).toHaveLength(1)
+        } else {
+            expect(wrapper.find('#checkin')).toHaveLength(1)
+        }
     });
 });
 
@@ -43,10 +47,8 @@ describe("event", () => {
         expect(wrapper.state('fromSuccess')).toBe(false)
     });
 
-    it("Check functions component", () => {
+    it("Check functions component number", () => {
         const wrapper = shallow(<MainPage />);
-        wrapper.instance().componentDidMount()
-        
     });
 
     afterEach(() => {
