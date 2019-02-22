@@ -56,22 +56,20 @@ class ModalSuccess extends Component {
 
 
     render() {
-        const { status , onSuccess} = this.props
+        const { status, onSuccess } = this.props
         return (
             <div>
-                <Modal id="fromSuccess" open={status}>
-           
-                    <Modal.Header>Submit</Modal.Header>
-                    <Modal.Content image>
-                        <Image wrapped size='medium' src='https://2p2bboli8d61fqhjiqzb8p1a-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/tony-stark-audi-r8.jpg' />
-                        <Modal.Description>
-                            <Header>สำเร็จ !!!</Header>
-                            <br/>
-                            <Button onClick={(e) => { onSuccess(e) }} id="btnOK" inverted color='green'>
-                                OK
-                            </Button>
-                        </Modal.Description>
+                <Modal basic
+        size='small' id="fromSuccess" open={status}  >
+                    <Header icon='browser' content='ทำรายการสำเร็จ' />
+                    <Modal.Content>
+                        <h3>คุณได้เพิ่มจำนวนและอนุมัติให้ รถเข้าจอดแล้ว.</h3>
                     </Modal.Content>
+                    <Modal.Actions>
+                        <Button onClick={(e) => { onSuccess(e) }} id="btnOK" inverted color='green'>
+                            <Icon name='checkmark' /> Got it
+                        </Button>
+                    </Modal.Actions>
                 </Modal>
             </div>
         );

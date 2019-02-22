@@ -40,50 +40,56 @@ class MainPage extends Component {
         var url = new URL(window.location.href)
         var size = url.searchParams.get("car_size")
         if (size >= 50) {
-            this.setState({ button: false,number: size })
+            this.setState({ button: false, number: size })
         } else {
-            this.setState({ button: true,number: size })
+            this.setState({ button: true })
         }
     }
-
     handlerSubmitForm(e) {
         this.setState({ fromModal: true })
     }
-
     async Submit(e) {
         const { number } = this.state
         this.setState({ fromSuccess: true, number: number + 1, test: e })
-
     }
     async Success(e) {
         this.setState({ fromModal: false, fromSuccess: false, })
     }
-
     render() {
-        const { fromModal, fromSuccess ,number, button} = this.state
+        const { fromModal, fromSuccess, number, button } = this.state
         return (
-            <div>
-                <h1>Car System</h1>
-                {button == true?
-                    <Button
-                        id='checkin'
-                        primary
-                        onClick={e => this.handlerSubmitForm(e)}
-                        className={this.state.button_class}>IN</Button>
-                :<Container id="Disable"></Container> }
-                <ModalSubmit
-                    status={fromModal}
-                    onClose={(e) => this.setState({ fromModal: false })}
-                    onSubmit={(e) => this.Submit(e)}
-                />
-                <ModalSuccess
-                    status={fromSuccess}
-                    onSuccess={(e) => this.Success(e)}
-                />
+            <Container>
+                <center>
+                    <Segment placeholder>
+                        <Header icon>
+                            <Icon name='car' />
+                            <h1>Car System</h1>
+                        </Header>
+                        <Segment.Inline>
 
-                <h2>[ {number} / 50 ]</h2>
+                            {button == true ?
+                                <Button
+                                    id='checkin'
+                                    primary
+                                    onClick={e => this.handlerSubmitForm(e)}
+                                    className={this.state.button_class}>CheckIn Car packing</Button>
+                                : <Container id="Disable"></Container>}
+                            <ModalSubmit
+                                status={fromModal}
+                                onClose={(e) => this.setState({ fromModal: false })}
+                                onSubmit={(e) => this.Submit(e)}
+                            />
+                            <ModalSuccess
+                                status={fromSuccess}
+                                onSuccess={(e) => this.Success(e)}
+                            />
 
-            </div>
+                            <h2>[ {number} / 50 ]</h2>
+
+                        </Segment.Inline>
+                    </Segment>
+                </center>
+            </Container>
         );
     }
 }

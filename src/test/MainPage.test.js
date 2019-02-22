@@ -6,7 +6,7 @@ import { shallow, mount, render } from 'enzyme';
 describe("render", () => {
     it('renders without crashing', () => {
         const wrapper = shallow(<MainPage />)
-        if(wrapper.state('number') >= 50){
+        if (wrapper.state('number') >= 50) {
             expect(wrapper.find('#Disable')).toHaveLength(1)
         } else {
             expect(wrapper.find('#checkin')).toHaveLength(1)
@@ -50,6 +50,9 @@ describe("event", () => {
     it("Check functions component number", () => {
         const wrapper = shallow(<MainPage />);
     });
+
+
+
 
     afterEach(() => {
         // handlerSubmitForm.mockReset();

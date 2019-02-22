@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalSubmit from '../components/ModalSubmit';
 import { shallow, mount, render } from 'enzyme';
-
+import { Input, Button } from 'semantic-ui-react';
 
 
 describe("popup", () => {
@@ -64,6 +64,18 @@ describe("event", () => {
         wrapper.instance().onChangInputRfid(InputRfid)
         expect(wrapper.state('InputRe')).toBe(InputRe)
         expect(wrapper.state('InputRfid')).toBe(InputRfid)
+    });
+
+    it("Test Input change", () => {
+        const wrapper = shallow(<ModalSubmit />);
+        wrapper.instance().onChangInputRe = jest.fn()
+        wrapper.find('#InputRe').simulate('change')
+        expect(wrapper.instance().onChangInputRe).toHaveBeenCalledTimes(1)
+
+        wrapper.instance().onChangInputRfid = jest.fn()
+        wrapper.find('#InputRfid').simulate('change')
+        expect(wrapper.instance().onChangInputRfid).toHaveBeenCalledTimes(1)
+        
     });
 
     afterEach(() => {

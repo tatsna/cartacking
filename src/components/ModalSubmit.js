@@ -46,17 +46,17 @@ class ModalSubmit extends Component {
                         floated='right'
                         id='btnClose'
                         onClick={(e) => { onClose(e) }} />
-                    <Modal.Header>Submit</Modal.Header>
+                    <Modal.Header>กรอกรายละเอียด</Modal.Header>
                     <Modal.Content image>
                         <Image wrapped size='medium' src='https://2p2bboli8d61fqhjiqzb8p1a-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/tony-stark-audi-r8.jpg' />
                         <Modal.Description>
                             <Header>กรอกข้อมูล</Header>
-                            <Input onChange={text => this.onChangInputRe(text)} id='InputRe' icon='hand point left' placeholder='ทะเบียนรถ...' />
-                            <Input onChange={text => this.onChangInputRfid(text)} id='InputRfid' icon='hand point left' placeholder='RFID...' />
-                            <center>
+                            <Input style={{margin: 10}} onChange={text => this.onChangInputRe(text)} id='InputRe' icon='hand point left' placeholder='ทะเบียนรถ...' />
+                            <Input style={{margin: 10}} onChange={text => this.onChangInputRfid(text)} id='InputRfid' icon='hand point left' placeholder='RFID...' />
+                            <center style={{margin: 30}}>
                                 <div>
-                                    <Button id="btnSubmit" onClick={(e) => { onSubmit() }} primary>Submit</Button>
-                                    <Button id="btnCancel" onClick={(e) => { onCancel() }} secondary>Cancel</Button>
+                                    <Button size="Big" style={{margin: 10}} id="btnSubmit" onClick={(e) => { onSubmit() }} primary>Submit</Button>
+                                    <Button size="Big" style={{margin: 10}} id="btnCancel" onClick={(e) => { onCancel() }} secondary>Cancel</Button>
                                 </div>
                             </center>
                         </Modal.Description>

@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.57% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/14</span>
+        <span class='fraction'>13/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>2/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">70% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>7/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.57% </span>
+        <span class="strong">76.47% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/14</span>
+        <span class='fraction'>13/17</span>
       </div>
     </div>
   </div>
@@ -125,7 +125,16 @@
 80
 81
 82
-83</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -150,8 +159,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,8 +172,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,14 +196,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -223,7 +241,8 @@ import {
     Checkbox,
     Menu,
     Segment,
-    Text
+    Text,
+    Container
 &nbsp;
 } from 'semantic-ui-react';
 import ModalSubmit from './ModalSubmit'
@@ -236,7 +255,8 @@ class MainPage extends Component {
         this.state = {
             fromModal: false,
             fromSuccess: false,
-            number: 0
+            number: 0,
+            button: true
         }
     }
 &nbsp;
@@ -244,8 +264,13 @@ class MainPage extends Component {
     //Array
 &nbsp;
     async componentDidMount() {
-     var url = new URL(window.location.href)
-     alert(url)
+        var url = new URL(window.location.href)
+        var size = url.searchParams.get("car_size")
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (size &gt;= 50) {
+<span class="cstat-no" title="statement not covered" >            this.setState({ button: false,number: size })</span>
+        } else {
+            this.setState({ button: true,number: size })
+        }
     }
 &nbsp;
     handlerSubmitForm(e) {
@@ -262,15 +287,17 @@ class MainPage extends Component {
     }
 &nbsp;
     render() {
-        const { fromModal, fromSuccess } = this.state
+        const { fromModal, fromSuccess ,number, button} = this.state
         return (
             &lt;div&gt;
                 &lt;h1&gt;Car System&lt;/h1&gt;
-                &lt;Button
-                    id='checkin'
-                    primary
-                    onClick={e =&gt; this.handlerSubmitForm(e)}
-                    className={this.state.button_class}&gt;IN&lt;/Button&gt;
+                {button == true?
+                    &lt;Button
+                        id='checkin'
+                        primary
+                        onClick={e =&gt; this.handlerSubmitForm(e)}
+                        className={this.state.button_class}&gt;IN&lt;/Button&gt;
+                :<span class="branch-1 cbranch-no" title="branch not covered" >&lt;Container id="Disable"&gt;&lt;/Container&gt; </span>}
                 &lt;ModalSubmit
                     status={fromModal}
                     onClose={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.setState({ fromModal: false })}</span>
@@ -280,9 +307,9 @@ class MainPage extends Component {
                     status={fromSuccess}
                     onSuccess={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >this.Success(e)}</span>
                 /&gt;
-                
-                &lt;h2&gt;[ {this.state.number} / 50 ]&lt;/h2&gt;
-                
+&nbsp;
+                &lt;h2&gt;[ {number} / 50 ]&lt;/h2&gt;
+&nbsp;
             &lt;/div&gt;
         );
     }
@@ -295,7 +322,7 @@ export default MainPage;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Feb 22 2019 15:02:04 GMT+0700 (Indochina Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Feb 22 2019 16:29:54 GMT+0700 (Indochina Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
