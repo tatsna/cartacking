@@ -31,6 +31,7 @@ describe("event", () => {
         expect(wrapper.state('number')).toBe(number+1)
         
     });
+
     afterEach(() => {
         // handlerSubmitForm.mockReset();
     });

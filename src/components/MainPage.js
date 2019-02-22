@@ -25,19 +25,17 @@ class MainPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
             fromModal: false,
             fromSuccess: false,
             number: 0
         }
     }
 
-    async componentDidMount() {
-        try {
-            await AsyncStorage.setItem('@MySuperStore:key', 'I like to save it.');
-        } catch (error) {
+    //Number
+    //Array
 
-        }
+    async componentDidMount() {
+     
     }
 
     handlerSubmitForm(e) {
@@ -47,8 +45,9 @@ class MainPage extends Component {
     async Submit(e) {
         const { number } = this.state
         this.setState({ fromSuccess: true, number: number + 1, test: e })
+
     }
-    Success(e) {
+    async Success(e) {
         this.setState({ fromModal: false, fromSuccess: false, })
     }
 

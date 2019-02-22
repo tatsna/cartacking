@@ -27,7 +27,6 @@ class ModalSubmit extends Component {
             InputRfid: '',
         }
     }
-    
     onChangInputRe(InputRe){
         this.setState({InputRe:InputRe})
     }
@@ -36,10 +35,11 @@ class ModalSubmit extends Component {
     }
     render() {
         const { status, onClose , onSubmit, onCancel} = this.props
+        const {InputRe , InputRfid} = this.state
         return (
             <center>
             <div>
-                <Modal open={status}>
+                <Modal id="fromSubmit" open={status}>
                     <Button
                         circular
                         icon='close'
