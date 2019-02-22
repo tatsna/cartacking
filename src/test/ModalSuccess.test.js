@@ -17,4 +17,16 @@ describe("popup", () => {
 
 });
 
-
+describe("event", () => {
+    beforeEach(() => {
+    });
+    it("should call onCancel", () => {
+        let onSuccessfn = jest.fn();
+        const wrapper = shallow(
+            <ModalSuccess
+                onSuccess={onSuccessfn}
+            />);
+        wrapper.find('#btnOK').simulate('click')
+        expect(onSuccessfn).toHaveBeenCalledTimes(1)
+    });
+});

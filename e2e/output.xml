@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20190222 14:13:06.690">
+<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20190222 15:03:46.012">
 <suite id="s1" name="Checkin" source="/Users/spartar/Documents/ProjectApplication/test1/cartacking/e2e/checkin.robot">
 <test id="s1-t1" name="test clickcheckin">
 <kw name="Open Browser" library="Selenium2Library">
@@ -8,135 +8,63 @@
 <arg>http://localhost:3000/</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20190222 14:13:06.901" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 14:13:06.901" endtime="20190222 14:13:11.124"></status>
+<msg timestamp="20190222 15:03:46.183" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
+<status status="PASS" starttime="20190222 15:03:46.182" endtime="20190222 15:03:49.666"></status>
 </kw>
 <kw name="Location Should Be" library="Selenium2Library">
 <doc>Verifies that current URL is exactly ``url``.</doc>
 <arguments>
 <arg>http://localhost:3000/</arg>
 </arguments>
-<msg timestamp="20190222 14:13:11.141" level="INFO">Current location is 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 14:13:11.125" endtime="20190222 14:13:11.141"></status>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190222 15:03:49.675" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : http://localhost:3000/}
+  (Session info: chrome=72.0.3626.119)
+  (Driver info: chromedriver=2.45.615355 (d5698f682d8b2742017df6c81e0bd8e6a3063189),platform=Mac OS X 10.14.0 x86_64)
+</msg>
+<status status="FAIL" starttime="20190222 15:03:49.669" endtime="20190222 15:03:49.675"></status>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>checkin</arg>
-</arguments>
-<msg timestamp="20190222 14:13:11.142" level="INFO">Clicking element 'checkin'.</msg>
-<status status="PASS" starttime="20190222 14:13:11.142" endtime="20190222 14:13:11.358"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>fromSubmit</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:11.359" endtime="20190222 14:13:11.398"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>InputRe</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:11.398" endtime="20190222 14:13:11.417"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>InputRfid</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:11.417" endtime="20190222 14:13:11.436"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>InputRe</arg>
-<arg>7777</arg>
-</arguments>
-<msg timestamp="20190222 14:13:11.436" level="INFO">Typing text '7777' into text field 'InputRe'.</msg>
-<status status="PASS" starttime="20190222 14:13:11.436" endtime="20190222 14:13:11.731"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>InputRfid</arg>
-<arg>1</arg>
-</arguments>
-<msg timestamp="20190222 14:13:11.731" level="INFO">Typing text '1' into text field 'InputRfid'.</msg>
-<status status="PASS" starttime="20190222 14:13:11.731" endtime="20190222 14:13:11.822"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnSubmit</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:11.823" endtime="20190222 14:13:11.844"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnCancel</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:11.844" endtime="20190222 14:13:11.865"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>btnSubmit</arg>
-</arguments>
-<msg timestamp="20190222 14:13:11.866" level="INFO">Clicking element 'btnSubmit'.</msg>
-<status status="PASS" starttime="20190222 14:13:11.866" endtime="20190222 14:13:11.988"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>fromSuccess</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:11.989" endtime="20190222 14:13:12.018"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnOK</arg>
-</arguments>
-<status status="PASS" starttime="20190222 14:13:12.018" endtime="20190222 14:13:12.070"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>btnOK</arg>
-</arguments>
-<msg timestamp="20190222 14:13:12.071" level="INFO">Clicking element 'btnOK'.</msg>
-<status status="PASS" starttime="20190222 14:13:12.070" endtime="20190222 14:13:12.151"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>0.1s</arg>
-</arguments>
-<msg timestamp="20190222 14:13:12.253" level="INFO">Slept 100 milliseconds</msg>
-<status status="PASS" starttime="20190222 14:13:12.152" endtime="20190222 14:13:12.253"></status>
+<msg timestamp="20190222 15:03:49.675" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : http://localhost:3000/}
+  (Session info: chrome=72.0.3626.119)
+  (Driver info: chromedriver=2.45.615355 (d5698f682d8b2742017df6c81e0bd8e6a3063189),platform=Mac OS X 10.14.0 x86_64)
+</msg>
+<msg timestamp="20190222 15:03:49.678" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : http://localhost:3000/}
+  (Session info: chrome=72.0.3626.119)
+  (Driver info: chromedriver=2.45.615355 (d5698f682d8b2742017df6c81e0bd8e6a3063189),platform=Mac OS X 10.14.0 x86_64)
+</msg>
+<status status="FAIL" starttime="20190222 15:03:49.666" endtime="20190222 15:03:49.678"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library" type="teardown">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190222 14:13:12.254" endtime="20190222 14:13:12.399"></status>
+<status status="PASS" starttime="20190222 15:03:49.679" endtime="20190222 15:03:49.811"></status>
 </kw>
-<status status="PASS" starttime="20190222 14:13:06.900" endtime="20190222 14:13:12.399" critical="yes"></status>
+<status status="FAIL" starttime="20190222 15:03:46.181" endtime="20190222 15:03:49.812" critical="yes">UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : http://localhost:3000/}
+  (Session info: chrome=72.0.3626.119)
+  (Driver info: chromedriver=2.45.615355 (d5698f682d8b2742017df6c81e0bd8e6a3063189),platform=Mac OS X 10.14.0 x86_64)
+</status>
 </test>
-<status status="PASS" starttime="20190222 14:13:06.692" endtime="20190222 14:13:12.402"></status>
+<status status="FAIL" starttime="20190222 15:03:46.014" endtime="20190222 15:03:49.817"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Checkin">Checkin</stat>
+<stat pass="0" fail="1" id="s1" name="Checkin">Checkin</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20190222 15:03:49.675" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
+Message: unexpected alert open: {Alert text : http://localhost:3000/}
+  (Session info: chrome=72.0.3626.119)
+  (Driver info: chromedriver=2.45.615355 (d5698f682d8b2742017df6c81e0bd8e6a3063189),platform=Mac OS X 10.14.0 x86_64)
+</msg>
 </errors>
 </robot>

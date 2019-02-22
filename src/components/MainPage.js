@@ -35,7 +35,8 @@ class MainPage extends Component {
     //Array
 
     async componentDidMount() {
-     
+     var url = new URL(window.location.href)
+     alert(url)
     }
 
     handlerSubmitForm(e) {

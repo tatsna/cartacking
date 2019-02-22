@@ -35,7 +35,6 @@ class ModalSubmit extends Component {
     }
     render() {
         const { status, onClose , onSubmit, onCancel} = this.props
-        const {InputRe , InputRfid} = this.state
         return (
             <center>
             <div>

@@ -65,6 +65,7 @@ describe("event", () => {
         expect(wrapper.state('InputRe')).toBe(InputRe)
         expect(wrapper.state('InputRfid')).toBe(InputRfid)
     });
+
     afterEach(() => {
         // handlerSubmitForm.mockReset();
     });

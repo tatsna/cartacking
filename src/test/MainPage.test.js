@@ -32,6 +32,18 @@ describe("event", () => {
         
     });
 
+
+    it("functions handlerSubmitForm", () => {
+        const wrapper = shallow(<MainPage />);
+        wrapper.instance().handlerSubmitForm()
+        expect(wrapper.state('fromModal')).toBe(true)
+
+        wrapper.instance().Success()
+        expect(wrapper.state('fromModal')).toBe(false)
+        expect(wrapper.state('fromSuccess')).toBe(false)
+    });
+
+
     afterEach(() => {
         // handlerSubmitForm.mockReset();
     });
