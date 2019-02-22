@@ -25,14 +25,14 @@ test clickcheckin
   Wait Until Page Contains Element      fromSuccess
   Wait Until Page Contains Element      btnOK
   Click Element    btnOK
-  Sleep    0.1s
+  Sleep   3s
 
 
 test clickcheckin
-  Open Browser        http://localhost:3000/car_size=50   chrome
-  Location Should Be    http://localhost:3000/car_size=50
+  Open Browser        http://localhost:3000/?car_size=50   chrome
+  Location Should Be    http://localhost:3000/?car_size=50
   Wait Until Page Contains Element      Disable
-  Sleep    0.1s
+  Sleep    3s
 
 
 

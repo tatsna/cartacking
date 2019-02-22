@@ -14,7 +14,8 @@ import {
     Checkbox,
     Menu,
     Segment,
-    Text
+    Text,
+    Container
 
 } from 'semantic-ui-react';
 import ModalSubmit from './ModalSubmit'
@@ -28,6 +29,7 @@ class MainPage extends Component {
             fromModal: false,
             fromSuccess: false,
             number: 0,
+            button: true
         }
     }
 
@@ -35,7 +37,13 @@ class MainPage extends Component {
     //Array
 
     async componentDidMount() {
-        
+        var url = new URL(window.location.href)
+        var size = url.searchParams.get("car_size")
+        if (size >= 50) {
+            this.setState({ button: false,number: size })
+        } else {
+            this.setState({ button: true,number: size })
+        }
     }
 
     handlerSubmitForm(e) {
@@ -52,15 +60,17 @@ class MainPage extends Component {
     }
 
     render() {
-        const { fromModal, fromSuccess } = this.state
+        const { fromModal, fromSuccess ,number, button} = this.state
         return (
             <div>
                 <h1>Car System</h1>
-                <Button
-                    id='checkin'
-                    primary
-                    onClick={e => this.handlerSubmitForm(e)}
-                    className={this.state.button_class}>IN</Button>
+                {button == true?
+                    <Button
+                        id='checkin'
+                        primary
+                        onClick={e => this.handlerSubmitForm(e)}
+                        className={this.state.button_class}>IN</Button>
+                :<Container id="Disable"></Container> }
                 <ModalSubmit
                     status={fromModal}
                     onClose={(e) => this.setState({ fromModal: false })}
@@ -70,9 +80,9 @@ class MainPage extends Component {
                     status={fromSuccess}
                     onSuccess={(e) => this.Success(e)}
                 />
-                
-                <h2>[ {this.state.number} / 50 ]</h2>
-                
+
+                <h2>[ {number} / 50 ]</h2>
+
             </div>
         );
     }
