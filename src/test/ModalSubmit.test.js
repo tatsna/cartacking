@@ -10,7 +10,7 @@ describe("popup", () => {
     it("should call productSelect", () => {
         const wrapper = shallow(<ModalSubmit />);
         wrapper.instance().handlerSubmitForm
-        expect(wrapper.find('#fromSubmit')).toHaveLength(1)
+        expect(wrapper.find('#btnClose')).toHaveLength(1)
         expect(wrapper.find('#InputRe')).toHaveLength(1)
         expect(wrapper.find('#InputRfid')).toHaveLength(1)
         expect(wrapper.find('#btnSubmit')).toHaveLength(1)
@@ -46,17 +46,17 @@ describe("event", () => {
         expect(onClosefn).toHaveBeenCalledTimes(1)
     });
 
-    it("should call onClose", () => {
+    it("should call onCancel", () => {
         let onCancelfn = jest.fn();
         const wrapper = shallow(
             <ModalSubmit
                 onCancel={onCancelfn}
             />);
-        wrapper.find('#btnClose').simulate('click')
-        expect(onClosefn).toHaveBeenCalledTimes(1)
+        wrapper.find('#btnCancel').simulate('click')
+        expect(onCancelfn).toHaveBeenCalledTimes(1)
     });
 
-    it("Check props fn", () => {
+    it("Check fn", () => {
         const wrapper = shallow(<ModalSubmit />);
         const InputRe = '7777'
         const InputRfid = 1

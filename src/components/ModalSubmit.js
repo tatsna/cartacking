@@ -28,23 +28,12 @@ class ModalSubmit extends Component {
         }
     }
     
-
-    // handleProductSelect(product) {
-    //     this.setState(prevState => {
-    //         return {
-    //             selectedProducts: prevState.selectedProducts.concat(product)
-    //         }
-    //     })
-    // }
-    // handleProductSelect (product) {
-    //     this.setState(prevState => {
-    //       return {
-    //         selectedProducts: prevState.selectedProducts.concat(product)
-    //       }
-    //     });
-    //   }
-
-
+    onChangInputRe(InputRe){
+        this.setState({InputRe:InputRe})
+    }
+    onChangInputRfid(InputRfid){
+        this.setState({InputRfid:InputRfid})
+    }
     render() {
         const { status, onClose , onSubmit, onCancel} = this.props
         return (
@@ -63,8 +52,8 @@ class ModalSubmit extends Component {
                         <Image wrapped size='medium' src='https://2p2bboli8d61fqhjiqzb8p1a-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/tony-stark-audi-r8.jpg' />
                         <Modal.Description>
                             <Header>กรอกข้อมูล</Header>
-                            <Input id='InputRe' icon='hand point left' placeholder='ทะเบียนรถ...' />
-                            <Input id='InputRfid' icon='hand point left' placeholder='RFID...' />
+                            <Input onChange={text => this.onChangInputRe(text)} id='InputRe' icon='hand point left' placeholder='ทะเบียนรถ...' />
+                            <Input onChange={text => this.onChangInputRfid(text)} id='InputRfid' icon='hand point left' placeholder='RFID...' />
                             <center>
                                 <div>
                                     <Button id="btnSubmit" onClick={(e) => { onSubmit() }} primary>Submit</Button>
