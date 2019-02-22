@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, AsyncStorage } from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import {
     Form,
@@ -14,6 +14,7 @@ import {
     Checkbox,
     Menu,
     Segment,
+    Text
 
 } from 'semantic-ui-react';
 import ModalSubmit from './ModalSubmit'
@@ -24,56 +25,35 @@ class MainPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedProducts: [],
-            products: [
-                { id: 1, name: 'aaa', brand: 'Nike' },
-            ],
+            data: [],
             fromModal: false,
             fromSuccess: false,
             number: 0
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            selectedProducts: [],
-            products: [
-                { id: 1, name: 'aaaaa', brand: 'Nike' },
-                { id: 2, name: 'bccbb', brand: 'Adidas' },
-                { id: 3, name: 'ccc', brand: 'Croc' },
-            ]
-        })
+    async componentDidMount() {
+        try {
+            await AsyncStorage.setItem('@MySuperStore:key', 'I like to save it.');
+        } catch (error) {
+
+        }
     }
 
-
-    handleProductSelect(product) {
-        this.setState(prevState => {
-            return {
-                selectedProducts: prevState.selectedProducts.concat(product)
-            }
-        })
-    }
-    // handleProductSelect (product) {
-    //     this.setState(prevState => {
-    //       return {
-    //         selectedProducts: prevState.selectedProducts.concat(product)
-    //       }
-    //     });
-    //   }
     handlerSubmitForm(e) {
         this.setState({ fromModal: true })
     }
 
-    Submit(e) {
-        const {number} = this.state
-        this.setState({fromSuccess:true,number: number+1})
+    async Submit(e) {
+        const { number } = this.state
+        this.setState({ fromSuccess: true, number: number + 1, test: e })
     }
     Success(e) {
-        this.setState({fromModal: false,fromSuccess: false,})
+        this.setState({ fromModal: false, fromSuccess: false, })
     }
 
     render() {
-        const { fromModal,fromSuccess } = this.state
+        const { fromModal, fromSuccess } = this.state
         return (
             <div>
                 <h1>Car System</h1>
@@ -84,14 +64,16 @@ class MainPage extends Component {
                     className={this.state.button_class}>IN</Button>
                 <ModalSubmit
                     status={fromModal}
-                    onClose={(e)=> this.setState({fromModal: false})}
+                    onClose={(e) => this.setState({ fromModal: false })}
                     onSubmit={(e) => this.Submit(e)}
                 />
-                <ModalSuccess 
+                <ModalSuccess
                     status={fromSuccess}
                     onSuccess={(e) => this.Success(e)}
                 />
+                
                 <h2>[ {this.state.number} / 50 ]</h2>
+                
             </div>
         );
     }

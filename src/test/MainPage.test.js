@@ -21,10 +21,21 @@ describe("event", () => {
         expect(wrapper.instance().handlerSubmitForm).toHaveBeenCalledTimes(1)
         wrapper.instance().handlerSubmitForm.mockClear()
     });
+
+    it("functions submit", () => {
+        const wrapper = shallow(<MainPage />);
+        const fromSuccess = true
+        const number = 0
+        wrapper.instance().Submit()
+        expect(wrapper.state('fromSuccess')).toBe(fromSuccess)
+        expect(wrapper.state('number')).toBe(number+1)
+        
+    });
     afterEach(() => {
         // handlerSubmitForm.mockReset();
     });
 });
+
 
 
 

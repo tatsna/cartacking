@@ -26,18 +26,49 @@ describe("popup", () => {
 describe("event", () => {
     beforeEach(() => {
     });
-    it("should call productSelect", () => {
-        const wrapper = shallow(<ModalSubmit />);
-        wrapper.instance().onSubmit = jest.fn()
+    it("should call onSubmit", () => {
+        let onSubmitfn = jest.fn();
+        const wrapper = shallow(
+            <ModalSubmit
+                onSubmit={onSubmitfn}
+            />);
         wrapper.find('#btnSubmit').simulate('click')
-        expect(wrapper.instance().onSubmit).toHaveBeenCalledTimes(1)
-        wrapper.instance().Success.mockClear()
+        expect(onSubmitfn).toHaveBeenCalledTimes(1)
+    });
+
+    it("should call onClose", () => {
+        let onClosefn = jest.fn();
+        const wrapper = shallow(
+            <ModalSubmit
+                onClose={onClosefn}
+            />);
+        wrapper.find('#btnClose').simulate('click')
+        expect(onClosefn).toHaveBeenCalledTimes(1)
+    });
+
+    it("should call onClose", () => {
+        let onCancelfn = jest.fn();
+        const wrapper = shallow(
+            <ModalSubmit
+                onCancel={onCancelfn}
+            />);
+        wrapper.find('#btnClose').simulate('click')
+        expect(onClosefn).toHaveBeenCalledTimes(1)
+    });
+
+    it("Check props fn", () => {
+        const wrapper = shallow(<ModalSubmit />);
+        const InputRe = '7777'
+        const InputRfid = 1
+        wrapper.instance().onChangInputRe(InputRe)
+        wrapper.instance().onChangInputRfid(InputRfid)
+        expect(wrapper.state('InputRe')).toBe(InputRe)
+        expect(wrapper.state('InputRfid')).toBe(InputRfid)
     });
     afterEach(() => {
         // handlerSubmitForm.mockReset();
     });
 });
-
 
 // describe("handleProductSelect", () => {
 //   it("test call", () => {

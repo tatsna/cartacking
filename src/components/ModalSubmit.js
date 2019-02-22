@@ -23,20 +23,11 @@ class ModalSubmit extends Component {
         super(props);
         this.state = {
             urlImage: '',
-            Regnumber: '',
+            InputRe: '',
+            InputRfid: '',
         }
     }
-    // componentDidMount() {
-    //     this.setState({
-    //         selectedProducts: [],
-    //         products: [
-    //             { id: 1, name: 'aaaaa', brand: 'Nike' },
-    //             { id: 2, name: 'bccbb', brand: 'Adidas' },
-    //             { id: 3, name: 'ccc', brand: 'Croc' },
-    //         ]
-    //     })
-    // }
-
+    
 
     // handleProductSelect(product) {
     //     this.setState(prevState => {
@@ -57,6 +48,7 @@ class ModalSubmit extends Component {
     render() {
         const { status, onClose , onSubmit, onCancel} = this.props
         return (
+            <center>
             <div>
                 <Modal open={status}>
                     <Button
@@ -64,7 +56,7 @@ class ModalSubmit extends Component {
                         icon='close'
                         basic
                         floated='right'
-                        id='fromSubmit'
+                        id='btnClose'
                         onClick={(e) => { onClose(e) }} />
                     <Modal.Header>Submit</Modal.Header>
                     <Modal.Content image>
@@ -75,14 +67,15 @@ class ModalSubmit extends Component {
                             <Input id='InputRfid' icon='hand point left' placeholder='RFID...' />
                             <center>
                                 <div>
-                                    <Button id="btnSubmit" onClick={(e) => { onSubmit(e) }} primary>Submit</Button>
-                                    <Button id="btnCancel" onClick={(e) => { onCancel(e) }} secondary>Cancel</Button>
+                                    <Button id="btnSubmit" onClick={(e) => { onSubmit() }} primary>Submit</Button>
+                                    <Button id="btnCancel" onClick={(e) => { onCancel() }} secondary>Cancel</Button>
                                 </div>
                             </center>
                         </Modal.Description>
                     </Modal.Content>
                 </Modal>
             </div>
+            </center>
         );
     }
 }

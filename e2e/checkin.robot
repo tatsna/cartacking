@@ -25,7 +25,7 @@ test clickcheckin
   Wait Until Page Contains Element      fromSuccess
   Wait Until Page Contains Element      btnOK
   Click Element    btnOK
-  Sleep    3s
+  Sleep    0.1s
 
 
 
