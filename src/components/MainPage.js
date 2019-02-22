@@ -27,7 +27,7 @@ class MainPage extends Component {
         this.state = {
             fromModal: false,
             fromSuccess: false,
-            number: 0
+            number: 0,
         }
     }
 
@@ -35,7 +35,7 @@ class MainPage extends Component {
     //Array
 
     async componentDidMount() {
-    
+        
     }
 
     handlerSubmitForm(e) {

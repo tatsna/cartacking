@@ -28,8 +28,8 @@ describe("event", () => {
         const number = 0
         wrapper.instance().Submit()
         expect(wrapper.state('fromSuccess')).toBe(fromSuccess)
-        expect(wrapper.state('number')).toBe(number+1)
-        
+        expect(wrapper.state('number')).toBe(number + 1)
+
     });
 
 
@@ -43,6 +43,11 @@ describe("event", () => {
         expect(wrapper.state('fromSuccess')).toBe(false)
     });
 
+    it("Check functions component", () => {
+        const wrapper = shallow(<MainPage />);
+        wrapper.instance().componentDidMount()
+        
+    });
 
     afterEach(() => {
         // handlerSubmitForm.mockReset();
