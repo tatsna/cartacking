@@ -28,6 +28,23 @@ test clickcheckin
   Sleep    0.1s
 
 
+test clickcheckin
+  Open Browser        http://localhost:3000/car_size=50   chrome
+  Location Should Be    http://localhost:3000/car_size=50
+  Click Element    checkin
+  Wait Until Page Contains Element      fromSubmit
+  Wait Until Page Contains Element      InputRe
+  Wait Until Page Contains Element      InputRfid
+  Input Text        InputRe     7777
+  Input Text        InputRfid     2  
+  Wait Until Page Contains Element      btnSubmit
+  Wait Until Page Contains Element      btnCancel
+  Click Element    btnSubmit
+  Wait Until Page Contains Element      Warning
+  Wait Until Page Contains Element      btnOK
+  Click Element    btnOK
+  Sleep    0.1s
+
 
 
 *** Keywords ***
