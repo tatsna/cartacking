@@ -14,7 +14,6 @@ describe("popup", () => {
     afterEach(() => {
         // handlerSubmitForm.mockReset();
     });
-
 });
 
 describe("event", () => {
@@ -23,7 +22,7 @@ describe("event", () => {
     it("should call onCancel", () => {
         let onErrorfn = jest.fn();
         const wrapper = shallow(
-            <ModalSuccess
+            <ModalError
                 onError={onErrorfn}
             />);
         wrapper.find('#btnOK').simulate('click')

@@ -8,13 +8,6 @@ import {
     Header,
     Modal,
     Input,
-    TextArea,
-    Label,
-    Icon,
-    Checkbox,
-    Menu,
-    Segment,
-
 } from 'semantic-ui-react';
 
 
@@ -26,43 +19,46 @@ class ModalSubmit extends Component {
             InputRe: '',
             InputRfid: '',
         }
+        this.onChangInputRe = this.onChangInputRe.bind(this);
+        this.onChangInputRfid = this.onChangInputRfid.bind(this);
     }
-    onChangInputRe(InputRe){
-        this.setState({InputRe:InputRe})
+    onChangInputRe(a,v) {
+        this.setState({InputRe:v.value})
     }
-    onChangInputRfid(InputRfid){
-        this.setState({InputRfid:InputRfid})
+    onChangInputRfid(a,v) {
+        this.setState({InputRfid:v.value})
+        alert(this.state.InputRfid)
     }
     render() {
-        const { status, onClose , onSubmit, onCancel} = this.props
+        const { status, onClose, onSubmit, onCancel, InputRfid } = this.props
         return (
             <center>
-            <div>
-                <Modal id="fromSubmit" open={status}>
-                    <Button
-                        circular
-                        icon='close'
-                        basic
-                        floated='right'
-                        id='btnClose'
-                        onClick={(e) => { onClose(e) }} />
-                    <Modal.Header>กรอกรายละเอียด</Modal.Header>
-                    <Modal.Content image>
-                        <Image wrapped size='medium' src='https://2p2bboli8d61fqhjiqzb8p1a-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/tony-stark-audi-r8.jpg' />
-                        <Modal.Description>
-                            <Header>กรอกข้อมูล</Header>
-                            <Input style={{margin: 10}} onChange={text => this.onChangInputRe(text)} id='InputRe' icon='hand point left' placeholder='ทะเบียนรถ...' />
-                            <Input style={{margin: 10}} onChange={text => this.onChangInputRfid(text)} id='InputRfid' icon='hand point left' placeholder='RFID...' />
-                            <center style={{margin: 30}}>
-                                <div>
-                                    <Button size="Big" style={{margin: 10}} id="btnSubmit" onClick={(e) => { onSubmit() }} primary>Submit</Button>
-                                    <Button size="Big" style={{margin: 10}} id="btnCancel" onClick={(e) => { onCancel() }} secondary>Cancel</Button>
-                                </div>
-                            </center>
-                        </Modal.Description>
-                    </Modal.Content>
-                </Modal>
-            </div>
+                <div>
+                    <Modal id="fromSubmit" open={status}>
+                        <Button
+                            circular
+                            icon='close'
+                            basic
+                            floated='right'
+                            id='btnClose'
+                            onClick={(e) => { onClose(e) }} />
+                        <Modal.Header>กรอกรายละเอียด</Modal.Header>
+                        <Modal.Content image>
+                            <Image wrapped size='medium' src='https://2p2bboli8d61fqhjiqzb8p1a-wpengine.netdna-ssl.com/wp-content/uploads/2016/04/tony-stark-audi-r8.jpg' />
+                            <Modal.Description>
+                                <Header>กรอกข้อมูล</Header>
+                                <Input style={{ margin: 10 }} onChange={(a, b) => this.onChangInputRe(a,b)} id='InputRe' icon='hand point left' placeholder='ทะเบียนรถ...' />
+                                <Input style={{ margin: 10 }} onChange={(a, b) => this.onChangInputRfid(a,b)} id='InputRfid' icon='hand point left' placeholder='RFID...' />
+                                <center style={{ margin: 30 }}>
+                                    <div>
+                                        <Button size="Big" style={{ margin: 10 }} id="btnSubmit" onClick={(InputRfid) => { alert(InputRfid) }} primary>Submit</Button>
+                                        <Button size="Big" style={{ margin: 10 }} id="btnCancel" onClick={(e) => { onCancel() }} secondary>Cancel</Button>
+                                    </div>
+                                </center>
+                            </Modal.Description>
+                        </Modal.Content>
+                    </Modal>
+                </div>
             </center>
         );
     }

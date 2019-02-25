@@ -1,288 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20190222 17:07:39.213">
-<suite id="s1" name="Checkin" source="/Users/spartar/Documents/ProjectApplication/test1/cartacking/e2e/checkin.robot">
-<test id="s1-t1" name="test clickcheckin">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the given ``url``.</doc>
+<robot generator="Robot 3.0.4 (Python 3.6.5 on darwin)" generated="20190225 13:33:04.858">
+<suite id="s1" name="Api Number Car" source="/Users/spartar/Documents/ProjectApplication/test1/cartacking/e2e/api_number_car.robot">
+<test id="s1-t1" name="Get Requests">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
-<arg>http://localhost:3000/</arg>
-<arg>chrome</arg>
+<arg>api</arg>
+<arg>http://127.0.0.1:8000/number_car</arg>
 </arguments>
-<msg timestamp="20190222 17:07:39.463" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 17:07:39.463" endtime="20190222 17:07:43.945"></status>
+<msg timestamp="20190225 13:33:04.967" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:8000/number_car, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190225 13:33:04.967" endtime="20190225 13:33:04.968"></status>
 </kw>
-<kw name="Location Should Be" library="Selenium2Library">
-<doc>Verifies that current URL is exactly ``url``.</doc>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
 <arguments>
-<arg>http://localhost:3000/</arg>
+<arg>api</arg>
+<arg>/</arg>
 </arguments>
-<msg timestamp="20190222 17:07:43.955" level="INFO">Current location is 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 17:07:43.946" endtime="20190222 17:07:43.955"></status>
+<assign>
+<var>${resp}</var>
+</assign>
+<msg timestamp="20190225 13:33:04.987" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10da59ef0&gt;: Failed to establish a new connection: [Errno 61] Connection refused',)': /number_car/</msg>
+<msg timestamp="20190225 13:33:05.189" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10da590f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused',)': /number_car/</msg>
+<msg timestamp="20190225 13:33:05.593" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10dace2e8&gt;: Failed to establish a new connection: [Errno 61] Connection refused',)': /number_car/</msg>
+<msg timestamp="20190225 13:33:05.599" level="FAIL">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /number_car/ (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10dace470&gt;: Failed to establish a new connection: [Errno 61] Connection refused',))</msg>
+<status status="FAIL" starttime="20190225 13:33:04.968" endtime="20190225 13:33:05.599"></status>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>checkin</arg>
-</arguments>
-<msg timestamp="20190222 17:07:43.955" level="INFO">Clicking element 'checkin'.</msg>
-<status status="PASS" starttime="20190222 17:07:43.955" endtime="20190222 17:07:44.171"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>fromSubmit</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.171" endtime="20190222 17:07:44.199"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>InputRe</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.199" endtime="20190222 17:07:44.217"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>InputRfid</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.218" endtime="20190222 17:07:44.237"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>InputRe</arg>
-<arg>7777</arg>
-</arguments>
-<msg timestamp="20190222 17:07:44.238" level="INFO">Typing text '7777' into text field 'InputRe'.</msg>
-<status status="PASS" starttime="20190222 17:07:44.237" endtime="20190222 17:07:44.501"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>InputRfid</arg>
-<arg>1</arg>
-</arguments>
-<msg timestamp="20190222 17:07:44.502" level="INFO">Typing text '1' into text field 'InputRfid'.</msg>
-<status status="PASS" starttime="20190222 17:07:44.501" endtime="20190222 17:07:44.601"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnSubmit</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.602" endtime="20190222 17:07:44.624"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnCancel</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.625" endtime="20190222 17:07:44.650"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>btnSubmit</arg>
-</arguments>
-<msg timestamp="20190222 17:07:44.651" level="INFO">Clicking element 'btnSubmit'.</msg>
-<status status="PASS" starttime="20190222 17:07:44.651" endtime="20190222 17:07:44.768"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>fromSuccess</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.768" endtime="20190222 17:07:44.798"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnOK</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:44.798" endtime="20190222 17:07:44.852"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>btnOK</arg>
-</arguments>
-<msg timestamp="20190222 17:07:44.853" level="INFO">Clicking element 'btnOK'.</msg>
-<status status="PASS" starttime="20190222 17:07:44.852" endtime="20190222 17:07:44.927"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20190222 17:07:45.929" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20190222 17:07:44.928" endtime="20190222 17:07:45.929"></status>
-</kw>
-<kw name="Close Browser" library="Selenium2Library" type="teardown">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190222 17:07:45.930" endtime="20190222 17:07:46.023"></status>
-</kw>
-<status status="PASS" starttime="20190222 17:07:39.461" endtime="20190222 17:07:46.024" critical="yes"></status>
+<status status="FAIL" starttime="20190225 13:33:04.966" endtime="20190225 13:33:05.599" critical="yes">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /number_car/ (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10dace470&gt;: Failed to establish a new connection: [Errno 61] Connection refused',))</status>
 </test>
-<test id="s1-t2" name="test clickcheckin">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>http://localhost:3000/?car_size=50</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20190222 17:07:46.027" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/?car_size=50'.</msg>
-<status status="PASS" starttime="20190222 17:07:46.026" endtime="20190222 17:07:49.293"></status>
-</kw>
-<kw name="Location Should Be" library="Selenium2Library">
-<doc>Verifies that current URL is exactly ``url``.</doc>
-<arguments>
-<arg>http://localhost:3000/?car_size=50</arg>
-</arguments>
-<msg timestamp="20190222 17:07:49.307" level="INFO">Current location is 'http://localhost:3000/?car_size=50'.</msg>
-<status status="PASS" starttime="20190222 17:07:49.295" endtime="20190222 17:07:49.307"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>Disable</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:49.308" endtime="20190222 17:07:49.338"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20190222 17:07:50.340" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20190222 17:07:49.338" endtime="20190222 17:07:50.341"></status>
-</kw>
-<kw name="Close Browser" library="Selenium2Library" type="teardown">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190222 17:07:50.342" endtime="20190222 17:07:50.474"></status>
-</kw>
-<status status="PASS" starttime="20190222 17:07:46.025" endtime="20190222 17:07:50.475" critical="yes"></status>
-</test>
-<test id="s1-t3" name="test CheckinRfidduplicate">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the given ``url``.</doc>
-<arguments>
-<arg>http://localhost:3000/</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20190222 17:07:50.478" level="INFO">Opening browser 'chrome' to base url 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 17:07:50.478" endtime="20190222 17:07:53.783"></status>
-</kw>
-<kw name="Location Should Be" library="Selenium2Library">
-<doc>Verifies that current URL is exactly ``url``.</doc>
-<arguments>
-<arg>http://localhost:3000/</arg>
-</arguments>
-<msg timestamp="20190222 17:07:53.805" level="INFO">Current location is 'http://localhost:3000/'.</msg>
-<status status="PASS" starttime="20190222 17:07:53.785" endtime="20190222 17:07:53.806"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>checkin</arg>
-</arguments>
-<msg timestamp="20190222 17:07:53.835" level="INFO">Clicking element 'checkin'.</msg>
-<status status="PASS" starttime="20190222 17:07:53.835" endtime="20190222 17:07:54.054"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>fromSubmit</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:54.054" endtime="20190222 17:07:54.076"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>InputRe</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:54.077" endtime="20190222 17:07:54.091"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>InputRfid</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:54.092" endtime="20190222 17:07:54.109"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>InputRe</arg>
-<arg>8888</arg>
-</arguments>
-<msg timestamp="20190222 17:07:54.110" level="INFO">Typing text '8888' into text field 'InputRe'.</msg>
-<status status="PASS" starttime="20190222 17:07:54.109" endtime="20190222 17:07:54.378"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>InputRfid</arg>
-<arg>1</arg>
-</arguments>
-<msg timestamp="20190222 17:07:54.379" level="INFO">Typing text '1' into text field 'InputRfid'.</msg>
-<status status="PASS" starttime="20190222 17:07:54.378" endtime="20190222 17:07:54.456"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnSubmit</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:54.456" endtime="20190222 17:07:54.477"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>btnCancel</arg>
-</arguments>
-<status status="PASS" starttime="20190222 17:07:54.478" endtime="20190222 17:07:54.504"></status>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>btnSubmit</arg>
-</arguments>
-<msg timestamp="20190222 17:07:54.505" level="INFO">Clicking element 'btnSubmit'.</msg>
-<status status="PASS" starttime="20190222 17:07:54.504" endtime="20190222 17:07:54.611"></status>
-</kw>
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>fromError</arg>
-</arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190222 17:08:00.378" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190222 17:07:59.740" endtime="20190222 17:08:00.378"></status>
-</kw>
-<msg timestamp="20190222 17:08:00.381" level="FAIL">Element 'fromError' did not appear in 5 seconds.</msg>
-<status status="FAIL" starttime="20190222 17:07:54.611" endtime="20190222 17:08:00.381"></status>
-</kw>
-<kw name="Close Browser" library="Selenium2Library" type="teardown">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190222 17:08:00.382" endtime="20190222 17:08:00.537"></status>
-</kw>
-<status status="FAIL" starttime="20190222 17:07:50.476" endtime="20190222 17:08:00.538" critical="yes">Element 'fromError' did not appear in 5 seconds.</status>
-</test>
-<status status="FAIL" starttime="20190222 17:07:39.215" endtime="20190222 17:08:00.541"></status>
+<status status="FAIL" starttime="20190225 13:33:04.860" endtime="20190225 13:33:05.600"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="1">Critical Tests</stat>
-<stat pass="2" fail="1">All Tests</stat>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="1" id="s1" name="Checkin">Checkin</stat>
+<stat pass="0" fail="1" id="s1" name="Api Number Car">Api Number Car</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20190222 17:07:46.025" level="WARN">Multiple test cases with name 'test clickcheckin' executed in test suite 'Checkin'.</msg>
+<msg timestamp="20190225 13:33:04.987" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10da59ef0&gt;: Failed to establish a new connection: [Errno 61] Connection refused',)': /number_car/</msg>
+<msg timestamp="20190225 13:33:05.189" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10da590f0&gt;: Failed to establish a new connection: [Errno 61] Connection refused',)': /number_car/</msg>
+<msg timestamp="20190225 13:33:05.593" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x10dace2e8&gt;: Failed to establish a new connection: [Errno 61] Connection refused',)': /number_car/</msg>
 </errors>
 </robot>

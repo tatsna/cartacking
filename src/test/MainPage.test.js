@@ -41,19 +41,21 @@ describe("event", () => {
         const wrapper = shallow(<MainPage />);
         wrapper.instance().handlerSubmitForm()
         expect(wrapper.state('fromModal')).toBe(true)
-        wrapper.instance().Success()
+        wrapper.instance().Cancel()
         expect(wrapper.state('fromModal')).toBe(false)
         expect(wrapper.state('fromSuccess')).toBe(false)
     });
 
     it("Check Rfid duplicate", () => {
         const wrapper = shallow(<MainPage />);
-        if(wrapper.state('RfidDefault')  == wrapper.state('Rfid')){
-            expect(wrapper.state('fromSuccess')).toBe(false)
-            expect(wrapper.state('fromError')).toBe(true)
-        } else {
-            expect(wrapper.state('fromSuccess')).toBe(true)
-            expect(wrapper.state('fromError')).toBe(false)
+        if (wrapper.state('Rfid') !== null) {
+            if (wrapper.state('RfidDefault') == wrapper.state('Rfid')) {
+                expect(wrapper.state('fromSuccess')).toBe(false)
+                expect(wrapper.state('fromError')).toBe(true)
+            } else {
+                expect(wrapper.state('fromSuccess')).toBe(true)
+                expect(wrapper.state('fromError')).toBe(false)
+            }
         }
     });
 

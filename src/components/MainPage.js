@@ -20,6 +20,7 @@ import {
 } from 'semantic-ui-react';
 import ModalSubmit from './ModalSubmit'
 import ModalSuccess from './ModalSuccess';
+import ModalError from './ModalError'
 
 
 class MainPage extends Component {
@@ -29,13 +30,15 @@ class MainPage extends Component {
             fromModal: false,
             fromSuccess: false,
             number: 0,
-            button: true
+            button: true,
+            fromError: false,
+            RfidDefault: '1',
+            Rfid: null
+            
         }
     }
-
     //Number
     //Array
-
     async componentDidMount() {
         var url = new URL(window.location.href)
         var size = url.searchParams.get("car_size")
@@ -49,14 +52,16 @@ class MainPage extends Component {
         this.setState({ fromModal: true })
     }
     async Submit(e) {
-        const { number } = this.state
-        this.setState({ fromSuccess: true, number: number + 1, test: e })
+        const { number ,Rfid} = this.state
+        alert(JSON.stringify(e))
+        this.setState({ fromSuccess: true, number: number + 1, Rfid:e})
     }
-    async Success(e) {
-        this.setState({ fromModal: false, fromSuccess: false, })
+    async Cancel(e) {
+        this.setState({ fromModal: false, fromSuccess: false, fromError: false })
     }
+    
     render() {
-        const { fromModal, fromSuccess, number, button } = this.state
+        const { fromModal, fromSuccess, number, button ,fromError} = this.state
         return (
             <Container>
                 <center>
@@ -66,7 +71,6 @@ class MainPage extends Component {
                             <h1>Car System</h1>
                         </Header>
                         <Segment.Inline>
-
                             {button == true ?
                                 <Button
                                     id='checkin'
@@ -81,9 +85,12 @@ class MainPage extends Component {
                             />
                             <ModalSuccess
                                 status={fromSuccess}
-                                onSuccess={(e) => this.Success(e)}
+                                onSuccess={(e) => this.Cancel(e)}
                             />
-
+                            <ModalError
+                                status={fromError}
+                                onError={(e) => this.Cancel(e)}
+                            />
                             <h2>[ {number} / 50 ]</h2>
 
                         </Segment.Inline>
