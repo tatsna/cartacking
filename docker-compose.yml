@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web-api:
+    build: ./cartacking/djangorest/
+    ports:
+     - "8000:8000"
+    volumes:
+     - ./cartacking/djangorest/:/usr/src/app
+    networks:
+      - backend
+  reactjs:
+    build: ./cartacking/
+    ports:
+     - "3000:3000"
+    volumes:
+     - ./cartacking/:/usr/src/app
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: 112233
+      POSTGRES_USER: admin
+      POSTGRES_DB: web-api
+    networks:
+      - backend
+networks:
+  backend:
+ 
