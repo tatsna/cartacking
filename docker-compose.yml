@@ -5,14 +5,21 @@ services:
     ports:
      - "8000:8000"
     volumes:
+<<<<<<< HEAD
      - ./cartacking/djangorest/:/usr/src/app
     networks:
       - backend
+=======
+      - ./cartacking/djangorest:/usr/src/app
+    
+  
+>>>>>>> b36478b4e6d968185246ec0d3c44f68cc879b888
   reactjs:
     build: ./cartacking/
     ports:
      - "3000:3000"
     volumes:
+<<<<<<< HEAD
      - ./cartacking/:/usr/src/app
   db:
     image: postgres
@@ -26,3 +33,6 @@ services:
 networks:
   backend:
  
+=======
+      - ./cartacking:/usr/src/app
+>>>>>>> b36478b4e6d968185246ec0d3c44f68cc879b888
