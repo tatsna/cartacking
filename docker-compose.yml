@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web-api:
+    build: ./cartacking/djangorest/
+    ports:
+     - "8000:8000"
+    volumes:
+      - ./cartacking/djangorest:/usr/src/app
+    
+  
+  reactjs:
+    build: ./cartacking/
+    ports:
+     - "3000:3000"
+    volumes:
+      - ./cartacking:/usr/src/app
